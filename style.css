@@ -1,0 +1,52 @@
+/* ROOT SETTINGS */
+/*---------------*/
+:root {
+	/* colors */
+	--dark-clr: 248 10% 30%;
+	--green-clr: 133 63% 67%;
+	--yellow-clr: 51 100% 94%;
+	--lightpurple-clr: 259 100% 96%;
+	--blue-clr: 210 100% 36%;
+	--purple-clr: 245 21% 52%;
+	--white-clr: 0 0% 100%;
+
+	/* font-size */
+	--fs-800: 3rem;
+	--fs-500: 1.75rem;
+	--fs-400: 1rem;
+
+	/* font-family */
+	--ff-roboto: 'Roboto', sans-serif;
+}
+
+/* ------------ */
+/* RESET */
+/* ------------ */
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+body,
+h1,
+p {
+	margin: 0;
+	font-weight: 400;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+body {
+	font-family: var(--ff-roboto);
+	font-size: var(--fs-400);
+	color: hsl(var(--dark-clr));
+	min-height: 100vh;
+	height: 100vh;
+	line-height: 1.5;
+}
