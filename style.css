@@ -32,6 +32,9 @@
 
 body,
 h1,
+h2,
+h3,
+h4,
 p {
 	margin: 0;
 	font-weight: 400;
@@ -50,6 +53,17 @@ body {
 	min-height: 100vh;
 	height: 100vh;
 	line-height: 1.5;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-columns {
+	flex-direction: column;
+}
+.space-between {
+	justify-content: space-between;
 }
 
 /* styling */
@@ -95,12 +109,38 @@ body {
 	padding-right: 0.75rem;
 }
 
+.filter-wrapper {
+	background: hsl(var(--white-clr));
+}
+.filter-wrapper > *:where(:not(:first-child)) {
+	margin: 1rem 1.5rem;
+}
+
+.filter-by-container {
+	margin: 2.5rem auto;
+}
+
+.filter-by-container > div {
+	margin: 0.75rem auto;
+}
+
+.filter-date-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.sort-by-container > h4,
+.filter-by-container > h4 {
+	font-weight: 500;
+	margin: 0.5rem auto;
+	color: #000;
+}
+
 .filter-heading {
 	display: flex;
 	background-color: hsl(var(--white-clr));
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 	border-radius: 0px 5px 5px 0px;
-	outline: 1px solid aqua;
 }
 
 .filter-heading > img {
@@ -109,7 +149,7 @@ body {
 
 .filter-heading > h3 {
 	font-size: var(--fs-500);
-	margin-inline: auto;
+	margin: auto;
 	font-weight: 500;
 }
 

@@ -34,6 +34,31 @@
 							<img src="svg/filter.svg" alt="filter" />
 							<h3>Filter</h3>
 						</div>
+						<div class="filter-elements-container">
+							<div class="sort-by-container">
+								<h4>Sort By</h4>
+								<select name="sort" id="sort-by">
+									<option value="name">Name</option>
+									<option value="date">Date</option>
+									<option value="status">Status</option>
+								</select>
+							</div>
+							<div class="filter-by-container">
+								<h4>Filter By</h4>
+								<div class="flex flex-columns">
+									<label for="filter">Status</label>
+									<select name="filter" id="filter-by">
+										<option value="all">All</option>
+										<option value="active">Active</option>
+										<option value="completed">Completed</option>
+									</select>
+								</div>
+								<div class="filter-date-wrapper">
+									<label for="date">Date</label>
+									<input type="date" name="date" />
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="task-container">
 						<div class="task-wrapper">
