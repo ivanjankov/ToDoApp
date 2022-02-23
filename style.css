@@ -237,6 +237,10 @@ body {
 	color: #9f9f9f;
 }
 
+.add-task {
+	background-color: hsl(var(--white-clr));
+}
+
 .add-task-head {
 	display: grid;
 	grid-template-columns: 20px auto;
