@@ -196,3 +196,63 @@ body {
 .task-date {
 	color: #9f9f9f;
 }
+
+.add-task-head {
+	display: grid;
+	grid-template-columns: 20px auto;
+	gap: 1rem;
+	place-items: center;
+	place-content: center;
+	cursor: pointer;
+}
+
+.add-task-head > i {
+	font-size: var(--fs-500);
+	color: rgb(255, 68, 68);
+}
+
+.add-task-head > p {
+	font-size: var(--fs-600);
+}
+
+.add-task-inputs > label {
+	margin-inline: 1rem;
+}
+.add-task-inputs {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	place-content: center;
+	padding: 1rem;
+	transition: all 0.5s ease;
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.add-task-btn {
+	display: inline-block;
+	text-decoration: none;
+	background-color: hsl(var(--blue-clr));
+	color: hsl(var(--white-clr));
+	font-size: 1rem;
+	border-radius: 4px;
+	padding: 0.35rem 1rem;
+	transition: transform 0.5s ease;
+}
+.add-task-btn:hover {
+	transform: scale(1.1);
+	transition: transform 0.5s ease;
+}
+
+.add-task-inputs > * {
+	display: grid;
+	place-content: center;
+}
+
+/* add this class to hide ADD TASK elements / wrapper */
+.add-task-inputs.hidden {
+	display: none;
+	visibility: hidden;
+	opacity: 0.5;
+	transform: translateY(-100%);
+	transition: all 0.5s ease;
+}
