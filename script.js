@@ -3,6 +3,7 @@ const nameInput = document.getElementById('name-input');
 const dateInput = document.getElementById('date-input');
 const statusInput = document.getElementById('status-input');
 const addTaskBtn = document.getElementById('add-btn');
+let filterByDateController = document.getElementById('filter-by-date');
 
 // apeend new task in taskwrapper element
 let toDoTasks = [];
@@ -48,16 +49,16 @@ function deleteTask(e) {
 	let newArr = toDoTasks.filter((item) => item.id !== id);
 
 	updateTaskListOnChange(newArr);
-	renderToDoItems();
+	renderToDoItems(newArr);
 }
 
 function updateTaskListOnChange(array) {
 	toDoTasks = array;
 }
 
-function renderToDoItems() {
+function renderToDoItems(arr) {
 	taskWrapper.innerHTML = '';
-	toDoTasks.forEach((task) => {
+	arr.forEach((task) => {
 		let newTask = createTaskElement(task);
 		taskWrapper.appendChild(newTask);
 	});
@@ -88,3 +89,26 @@ function createTaskElement(data) {
 			`;
 	return newTask;
 }
+
+// filters
+
+//filter by date
+function filterToDoOnDateChange() {
+	let date = '';
+	filterByDateController.addEventListener('change', (e) => {
+		if (e.target.value == '') {
+			renderToDoItems(toDoTasks);
+			return;
+		}
+		date = e.target.value;
+		updateDateFilteredArr(date);
+		return date;
+	});
+}
+
+function updateDateFilteredArr(date) {
+	let filteredDateArr = toDoTasks.filter((todo) => todo.date == date);
+	renderToDoItems(filteredDateArr);
+}
+
+filterToDoOnDateChange();
