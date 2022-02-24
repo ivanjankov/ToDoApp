@@ -43,6 +43,14 @@ function addEventListenerToDeleteBtn() {
 	});
 }
 
+function deleteTask(e) {
+	let id = +e.target.parentElement.parentElement.id;
+	let newArr = toDoTasks.filter((item) => item.id !== id);
+
+	updateTaskListOnChange(newArr);
+	renderToDoItems();
+}
+
 function updateTaskListOnChange(array) {
 	toDoTasks = array;
 }
