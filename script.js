@@ -4,6 +4,7 @@ const dateInput = document.getElementById('date-input');
 const statusInput = document.getElementById('status-input');
 const addTaskBtn = document.getElementById('add-btn');
 let filterByDateController = document.getElementById('filter-by-date');
+let filterByStatusController = document.getElementById('filter-by-status');
 
 // apeend new task in taskwrapper element
 let toDoTasks = [];
@@ -26,7 +27,7 @@ function getValuesFromInputs() {
 	return {
 		name: nameInput.value,
 		date: dateInput.value,
-		status: statusInput.checked,
+		status: statusInput.checked == true ? 'true' : 'false',
 		id: idCounter++,
 	};
 }
@@ -93,6 +94,9 @@ function createTaskElement(data) {
 // filters
 
 //filter by date
+filterToDoOnDateChange();
+filterToDoByStatus();
+
 function filterToDoOnDateChange() {
 	let date = '';
 	filterByDateController.addEventListener('change', (e) => {
@@ -111,4 +115,16 @@ function updateDateFilteredArr(date) {
 	renderToDoItems(filteredDateArr);
 }
 
-filterToDoOnDateChange();
+function filterToDoByStatus() {
+	filterByStatusController.addEventListener('change', filterListByStatus);
+}
+
+function filterListByStatus(e) {
+	let status = e.target.value;
+	let filteredStatusArr = toDoTasks.filter((todo) => todo.status == status);
+	if (status == 'all') {
+		renderToDoItems(toDoTasks);
+		return;
+	}
+	renderToDoItems(filteredStatusArr);
+}
