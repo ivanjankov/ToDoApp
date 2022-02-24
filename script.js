@@ -5,6 +5,7 @@ const statusInput = document.getElementById('status-input');
 const addTaskBtn = document.getElementById('add-btn');
 let filterByDateController = document.getElementById('filter-by-date');
 let filterByStatusController = document.getElementById('filter-by-status');
+let sortByController = document.getElementById('sort-by');
 
 // apeend new task in taskwrapper element
 let toDoTasks = [];
@@ -21,6 +22,8 @@ function appendTaskList() {
 		taskWrapper.appendChild(newTask);
 		addEventListenerToDeleteBtn();
 		resetInputFields();
+		sortByName(toDoTasks);
+		console.log(toDoTasks);
 	}
 }
 function getValuesFromInputs() {
@@ -74,6 +77,7 @@ function createTaskElement(data) {
 	newTask.setAttribute('id', data.id);
 	newTask.innerHTML = `
 						<label class="checkmark-container">
+							<p>${data.status}</p>
 							<input type="checkbox" checked="${false}" />
 							<span class="checkmark"></span>
 						</label>
@@ -127,4 +131,35 @@ function filterListByStatus(e) {
 		return;
 	}
 	renderToDoItems(filteredStatusArr);
+}
+
+// Sorting elements
+
+sortByController.addEventListener('change', (e) => {
+	if (e.target.value == 'name') {
+		sortByName(toDoTasks);
+	} else if (e.target.value == 'date') {
+		sortByDate(toDoTasks);
+	} else if (e.target.value == 'status') {
+		sortByStatus(toDoTasks);
+	}
+});
+
+function sortByName(obj) {
+	let toArray = Object.values(obj);
+	let sortedByName = [...toArray].sort((a, b) => a.name.localeCompare(b.name));
+	renderToDoItems(sortedByName);
+}
+
+function sortByDate(obj) {
+	let toArray = Object.values(obj);
+	let sortedByName = [...toArray].sort((a, b) => a.date.localeCompare(b.date));
+	renderToDoItems(sortedByName);
+}
+function sortByStatus(obj) {
+	let toArray = Object.values(obj);
+	let sortedByName = [...toArray].sort((a, b) =>
+		b.status.localeCompare(a.status)
+	);
+	renderToDoItems(sortedByName);
 }
