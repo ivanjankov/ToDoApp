@@ -37,3 +37,9 @@ function getValuesFromInputs() {
 		status: statusInput.checked,
 	};
 }
+
+function resetInputFields() {
+	nameInput.value = '';
+	dateInput.value = '';
+	statusInput.checked = false;
+}
