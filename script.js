@@ -24,6 +24,10 @@ function appendTaskList() {
                             <div class="task-date">
                                 <p>${data.date}</p>
                             </div>
+							<div class="task-date">
+									<a href="#" class="edit-task">Edit</a>
+									<a href="#" class="delete-task">Delete</a>
+							</div>
         `;
 
 		taskWrapper.appendChild(newTask);

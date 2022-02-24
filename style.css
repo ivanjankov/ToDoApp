@@ -162,7 +162,7 @@ body {
 
 .single-task {
 	display: grid;
-	grid-template-columns: 1fr 3fr 1fr;
+	grid-template-columns: 1fr 2fr 1fr 1fr;
 	align-items: center;
 	background-color: hsl(var(--white-clr));
 	margin: 0.5rem 0px;
@@ -235,6 +235,22 @@ body {
 
 .task-date {
 	color: #9f9f9f;
+}
+
+.edit-task {
+	background-color: #b2bec3;
+}
+.delete-task {
+	background-color: #d63031;
+}
+
+.edit-task,
+.delete-task {
+	text-decoration: none;
+	color: hsl(var(--white-clr));
+	padding: 0.45rem 0.75rem;
+	border-radius: 4px;
+	margin-inline: 0.25rem;
 }
 
 .add-task {
