@@ -55,6 +55,17 @@ function updateTaskListOnChange(array) {
 	toDoTasks = array;
 }
 
+function renderToDoItems() {
+	taskWrapper.innerHTML = '';
+	toDoTasks.forEach((task) => {
+		let newTask = createTaskElement(task);
+		taskWrapper.appendChild(newTask);
+	});
+
+	addEventListenerToDeleteBtn();
+	resetInputFields();
+}
+
 function createTaskElement(data) {
 	let newTask = document.createElement('div');
 	newTask.classList.add('single-task');
