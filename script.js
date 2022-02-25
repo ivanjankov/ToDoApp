@@ -8,6 +8,7 @@ let filterByStatusController = document.getElementById('filter-by-status');
 let sortByController = document.getElementById('sort-by');
 let editName = document.getElementById('edit-name');
 let editDate = document.getElementById('edit-date');
+let editStatus = document.getElementById('edit-status');
 let saveButton = document.getElementById('save');
 let currentIdForEdit = 0;
 let addTaskBtnController = document.getElementById('add-task-upper');
@@ -36,9 +37,12 @@ function getValuesFromInputs() {
 	return {
 		name: nameInput.value,
 		date: dateInput.value,
-		status: statusInput.checked == true ? 'true' : 'false',
+		status: convertInputStatusToString(statusInput.checked),
 		id: idCounter,
 	};
+}
+function convertInputStatusToString(status) {
+	return status == true ? 'true' : 'false';
 }
 
 function resetInputFields() {
@@ -49,6 +53,7 @@ function resetInputFields() {
 function resetEditFields() {
 	editDate.value = '';
 	editName.value = '';
+	editStatus.checked = false;
 }
 
 function addEventListenerToDeleteBtn() {
@@ -78,6 +83,7 @@ function saveChanges() {
 		if (toDoTasks[i].id == currentIdForEdit) {
 			toDoTasks[i].name = editName.value;
 			toDoTasks[i].date = editDate.value;
+			toDoTasks[i].status = convertInputStatusToString(editStatus.checked);
 			renderToDoItems(toDoTasks);
 			resetEditFields();
 			return;
