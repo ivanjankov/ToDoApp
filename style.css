@@ -255,6 +255,7 @@ body {
 
 .add-task {
 	background-color: hsl(var(--white-clr));
+	overflow-y: hidden;
 }
 
 .add-task-head {
@@ -308,13 +309,15 @@ body {
 	place-content: center;
 }
 
-/* add this class to hide ADD TASK elements / wrapper */
+.add-task-inputs {
+	transform: translateY(0px);
+	opacity: 1;
+	transition: transform 600ms ease-in;
+}
 .add-task-inputs.hidden {
-	display: none;
-	visibility: hidden;
-	opacity: 0.5;
-	transform: translateY(-100%);
-	transition: all 0.5s ease;
+	transform: translateY(-200px);
+	opacity: 0;
+	transition: transform 600ms ease-in;
 }
 
 /* --------------- */

@@ -10,6 +10,8 @@ let editName = document.getElementById('edit-name');
 let editDate = document.getElementById('edit-date');
 let saveButton = document.getElementById('save');
 let currentIdForEdit = 0;
+let addTaskBtnController = document.getElementById('add-task-upper');
+let addTaskInputController = document.getElementById('add-task-input');
 
 // apeend new task in taskwrapper element
 let toDoTasks = [];
@@ -192,4 +194,11 @@ function sortByStatus(obj) {
 		b.status.localeCompare(a.status)
 	);
 	renderToDoItems(sortedByName);
+}
+
+// toggle task input on click
+addTaskBtnController.addEventListener('click', toggleinputsVisibility);
+
+function toggleinputsVisibility() {
+	addTaskInputController.classList.toggle('hidden');
 }
