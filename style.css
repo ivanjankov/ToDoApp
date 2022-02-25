@@ -169,6 +169,13 @@ body {
 	padding: 0.75rem 2rem;
 	border-radius: 4px;
 }
+
+.tasks-heading {
+	text-align: start !important;
+	text-transform: uppercase;
+	font-size: var(--fs-500);
+	color: hsl(var(--dark-clr)) !important;
+}
 .checkmark-container {
 	display: inline-block;
 	position: relative;
