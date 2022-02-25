@@ -25,13 +25,9 @@
 	<body>
 		<div class="bg-container">
 			<div class="white-overlay">
-				<header class="header">
-					<h1>To Do App</h1>
-				</header>
 				<div class="main-content">
 					<div class="filter-wrapper">
 						<div class="filter-heading">
-							<img src="svg/filter.svg" alt="filter" />
 							<h3>Filter</h3>
 						</div>
 						<div class="filter-elements-container">
@@ -61,6 +57,29 @@
 						</div>
 					</div>
 					<div class="task-container">
+						<div class="add-task">
+							<div id="add-task-upper" class="add-task-head">
+								<i class="fa-solid fa-plus"></i>
+								<p>Add task</p>
+							</div>
+							<div id="add-task-input" class="add-task-inputs hidden">
+								<div class="add-task-name">
+									<label for="name">Name</label>
+									<input id="name-input" type="text" name="name" />
+								</div>
+								<div class="add-task-date">
+									<label for="date">Date</label>
+									<input id="date-input" type="date" name="date" />
+								</div>
+								<div class="add-task-status">
+									<label for="status">Completed</label>
+									<input id="status-input" type="checkbox" name="status" />
+								</div>
+								<div class="task-btn-wrapper">
+									<a href="#" id="add-btn" class="add-task-btn">Add Todo</a>
+								</div>
+							</div>
+						</div>
 						<div class="single-task tasks-heading">
 							<p>Name</p>
 							<p>Date</p>
@@ -83,29 +102,6 @@
 								<input id="edit-status" type="checkbox" />
 							</div>
 							<a href="#" id="save">Save</a>
-						</div>
-						<div class="add-task">
-							<div id="add-task-upper" class="add-task-head">
-								<i class="fa-solid fa-plus"></i>
-								<p>Add task</p>
-							</div>
-							<div id="add-task-input" class="add-task-inputs hidden">
-								<div class="add-task-name">
-									<label for="name">Name</label>
-									<input id="name-input" type="text" name="name" />
-								</div>
-								<div class="add-task-date">
-									<label for="date">Date</label>
-									<input id="date-input" type="date" name="date" />
-								</div>
-								<div class="add-task-status">
-									<label for="status">Status</label>
-									<input id="status-input" type="checkbox" name="status" />
-								</div>
-								<div class="task-btn-wrapper">
-									<a href="#" id="add-btn" class="add-task-btn">Add Todo</a>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
