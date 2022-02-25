@@ -6,10 +6,14 @@ const addTaskBtn = document.getElementById('add-btn');
 let filterByDateController = document.getElementById('filter-by-date');
 let filterByStatusController = document.getElementById('filter-by-status');
 let sortByController = document.getElementById('sort-by');
+let editName = document.getElementById('edit-name');
+let editDate = document.getElementById('edit-date');
+let saveButton = document.getElementById('save');
+let currentIdForEdit = 0;
 
 // apeend new task in taskwrapper element
 let toDoTasks = [];
-let idCounter = 1;
+let idCounter = 0;
 
 addTaskBtn.addEventListener('click', appendTaskList);
 
@@ -20,18 +24,16 @@ function appendTaskList() {
 		let newTask = createTaskElement(data);
 
 		taskWrapper.appendChild(newTask);
-		addEventListenerToDeleteBtn();
 		resetInputFields();
-		sortByName(toDoTasks);
-		console.log(toDoTasks);
 	}
 }
 function getValuesFromInputs() {
+	idCounter++;
 	return {
 		name: nameInput.value,
 		date: dateInput.value,
 		status: statusInput.checked == true ? 'true' : 'false',
-		id: idCounter++,
+		id: idCounter,
 	};
 }
 
