@@ -108,23 +108,24 @@ function createTaskElement(data) {
 	newTask.classList.add('single-task');
 	newTask.setAttribute('id', data.id);
 	newTask.innerHTML = `
-						<label class="checkmark-container">
-							<p>${data.status}</p>
-							<input type="checkbox" checked="${false}" />
-							<span class="checkmark"></span>
-						</label>
+						
 						<div class="task-name">
 							<p>${data.name}</p>
 						</div>
 						<div class="task-date">
 							<p>${data.date}</p>
 						</div>
+							<p>${returnStatus(data.status)}</p>
 						<div class="task-date">
 								<a href="#" class="edit-task">Edit</a>
 								<a href="#" class="delete-task">Delete</a>
 						</div>
 			`;
 	return newTask;
+}
+
+function returnStatus(status) {
+	return status == 'true' ? 'Completed' : 'Active';
 }
 
 // filters
