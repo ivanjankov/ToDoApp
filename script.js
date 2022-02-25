@@ -31,7 +31,7 @@ function appendTaskList() {
 		resetInputFields();
 		addEventListenerToDeleteBtn();
 		addEditFunctionality(newTask);
-		toggleinputsVisibility();
+		toggleAddTaskInputVisibility();
 	}
 }
 function getValuesFromInputs() {
@@ -208,9 +208,9 @@ function sortByStatus(obj) {
 }
 
 // toggle task input on click
-addTaskBtnController.addEventListener('click', toggleinputsVisibility);
+addTaskBtnController.addEventListener('click', toggleAddTaskInputVisibility);
 
-function toggleinputsVisibility() {
+function toggleAddTaskInputVisibility() {
 	addTaskInputController.classList.toggle('hidden');
 }
 function toggleEditInputVisibility() {
