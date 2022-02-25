@@ -113,6 +113,7 @@ body {
 
 .filter-wrapper {
 	background: hsl(var(--white-clr));
+	border-radius: 5px;
 }
 .filter-wrapper > *:where(:not(:first-child)) {
 	margin: 1rem 1.5rem;
@@ -302,9 +303,6 @@ body {
 	font-weight: 500;
 }
 
-/* .add-task-inputs > label {
-	margin-inline: 1rem;
-} */
 .add-task-inputs {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -343,8 +341,6 @@ body {
 	transition: all 600ms ease-in;
 	display: none;
 }
-
-/* --------------- */
 
 #edit-wrapper {
 	margin-top: 2rem;
