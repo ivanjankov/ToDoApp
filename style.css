@@ -323,3 +323,11 @@ body {
 	margin-top: 2rem;
 	gap: 1rem;
 }
+
+#save {
+	text-decoration: none;
+	text-align: center;
+	color: hsl(var(--white-clr));
+	background-color: hsl(var(--green-clr));
+	padding: 0.35rem 1.25rem;
+}
