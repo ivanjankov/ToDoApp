@@ -69,6 +69,7 @@ function addEditFunctionality(singleElement) {
 	let edit = singleElement.getElementsByClassName('edit-task')[0];
 	edit.addEventListener('click', (e) => {
 		currentIdForEdit = +e.target.parentElement.parentElement.id;
+		// editName.value =
 		toggleEditInputVisibility();
 	});
 }
@@ -185,6 +186,8 @@ sortByController.addEventListener('change', (e) => {
 		sortByDate(toDoTasks);
 	} else if (e.target.value == 'status') {
 		sortByStatus(toDoTasks);
+	} else {
+		renderToDoItems(toDoTasks);
 	}
 });
 
