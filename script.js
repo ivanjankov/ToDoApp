@@ -25,6 +25,8 @@ function appendTaskList() {
 
 		taskWrapper.appendChild(newTask);
 		resetInputFields();
+		addEventListenerToDeleteBtn();
+		addEditFunctionality(newTask);
 	}
 }
 function getValuesFromInputs() {
@@ -42,11 +44,22 @@ function resetInputFields() {
 	dateInput.value = '';
 	statusInput.checked = false;
 }
+function resetEditFields() {
+	editDate.value = '';
+	editName.value = '';
+}
 
 function addEventListenerToDeleteBtn() {
 	let btnsArr = Array.from(document.querySelectorAll('.delete-task'));
 	btnsArr.forEach((btn) => {
 		btn.addEventListener('click', deleteTask);
+	});
+}
+
+function addEditFunctionality(singleElement) {
+	let edit = singleElement.getElementsByClassName('edit-task')[0];
+	edit.addEventListener('click', (e) => {
+		currentIdForEdit = +e.target.parentElement.parentElement.id;
 	});
 }
 
@@ -58,6 +71,20 @@ function deleteTask(e) {
 	renderToDoItems(newArr);
 }
 
+function saveChanges() {
+	for (let i = 0; i < toDoTasks.length; i++) {
+		if (toDoTasks[i].id == currentIdForEdit) {
+			toDoTasks[i].name = editName.value;
+			toDoTasks[i].date = editDate.value;
+			renderToDoItems(toDoTasks);
+			resetEditFields();
+			return;
+		}
+	}
+}
+
+saveButton.addEventListener('click', saveChanges);
+
 function updateTaskListOnChange(array) {
 	toDoTasks = array;
 }
@@ -67,6 +94,7 @@ function renderToDoItems(arr) {
 	arr.forEach((task) => {
 		let newTask = createTaskElement(task);
 		taskWrapper.appendChild(newTask);
+		addEditFunctionality(newTask);
 	});
 
 	addEventListenerToDeleteBtn();
