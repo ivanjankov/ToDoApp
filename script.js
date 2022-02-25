@@ -30,6 +30,7 @@ function appendTaskList() {
 		resetInputFields();
 		addEventListenerToDeleteBtn();
 		addEditFunctionality(newTask);
+		toggleinputsVisibility();
 	}
 }
 function getValuesFromInputs() {
