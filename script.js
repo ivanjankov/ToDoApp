@@ -25,7 +25,7 @@ function appendTaskList() {
 	let data = getValuesFromInputs();
 	if (data.name !== '' && data.date != '') {
 		toDoTasks.push(data);
-		let newTask = createTaskElement(data);
+		let newTask = createTodoHtmlElement(data);
 
 		taskWrapper.appendChild(newTask);
 		resetInputFields();
@@ -104,7 +104,7 @@ function updateTaskListOnChange(array) {
 function renderToDoItems(arr) {
 	taskWrapper.innerHTML = '';
 	arr.forEach((task) => {
-		let newTask = createTaskElement(task);
+		let newTask = createTodoHtmlElement(task);
 		taskWrapper.appendChild(newTask);
 		addEditFunctionality(newTask);
 	});
@@ -113,7 +113,7 @@ function renderToDoItems(arr) {
 	resetInputFields();
 }
 
-function createTaskElement(data) {
+function createTodoHtmlElement(data) {
 	let newTask = document.createElement('div');
 	newTask.classList.add('single-task');
 	newTask.setAttribute('id', data.id);
