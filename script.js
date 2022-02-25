@@ -13,6 +13,7 @@ let saveButton = document.getElementById('save');
 let currentIdForEdit = 0;
 let addTaskBtnController = document.getElementById('add-task-upper');
 let addTaskInputController = document.getElementById('add-task-input');
+let editInputWrapper = document.getElementById('edit-wrapper');
 
 // apeend new task in taskwrapper element
 let toDoTasks = [];
@@ -68,6 +69,7 @@ function addEditFunctionality(singleElement) {
 	let edit = singleElement.getElementsByClassName('edit-task')[0];
 	edit.addEventListener('click', (e) => {
 		currentIdForEdit = +e.target.parentElement.parentElement.id;
+		toggleEditInputVisibility();
 	});
 }
 
@@ -87,6 +89,7 @@ function saveChanges() {
 			toDoTasks[i].status = convertInputStatusToString(editStatus.checked);
 			renderToDoItems(toDoTasks);
 			resetEditFields();
+			toggleEditInputVisibility();
 			return;
 		}
 	}
@@ -209,4 +212,7 @@ addTaskBtnController.addEventListener('click', toggleinputsVisibility);
 
 function toggleinputsVisibility() {
 	addTaskInputController.classList.toggle('hidden');
+}
+function toggleEditInputVisibility() {
+	editInputWrapper.classList.toggle('hidden');
 }

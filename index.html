@@ -61,24 +61,28 @@
 						</div>
 					</div>
 					<div class="task-container">
-						<div id="task-wrapper" class="task-wrapper">
-							<div class="single-task tasks-heading">
-								<p>Name</p>
-								<p>Date</p>
-								<p>Status</p>
+						<div class="single-task tasks-heading">
+							<p>Name</p>
+							<p>Date</p>
+							<p>Status</p>
+						</div>
+
+						<div id="task-wrapper" class="task-wrapper"></div>
+
+						<div id="edit-wrapper" class="single-task edit-single-task hidden">
+							<div>
+								<label for="edit-name">Edit Name</label>
+								<input id="edit-name" type="text" />
 							</div>
-							<!-- <div class="single-task">
-								<label class="checkmark-container">
-									<input type="checkbox" checked="" />
-									<span class="checkmark"></span>
-								</label>
-								<div class="task-name">
-									<p>Zoom call with marketing team...</p>
-								</div>
-								<div class="task-date">
-									<p>22/02/2022</p>
-								</div>
-							</div> -->
+							<div>
+								<label for="edit-date">Edit Date</label>
+								<input id="edit-date" type="date" />
+							</div>
+							<div>
+								<label for="todo-status">Status</label>
+								<input id="edit-status" type="checkbox" />
+							</div>
+							<a href="#" id="save">Save</a>
 						</div>
 						<div class="add-task">
 							<div id="add-task-upper" class="add-task-head">
@@ -102,21 +106,6 @@
 									<a href="#" id="add-btn" class="add-task-btn">Add Todo</a>
 								</div>
 							</div>
-						</div>
-						<div id="edit-wrapper" class="flex">
-							<div>
-								<label for="edit-name">Edit Name</label>
-								<input id="edit-name" type="text" />
-							</div>
-							<div>
-								<label for="edit-date">Edit Date</label>
-								<input id="edit-date" type="date" />
-							</div>
-							<div>
-								<label for="todo-status">Status</label>
-								<input id="edit-status" type="checkbox" />
-							</div>
-							<a href="#" id="save">Save</a>
 						</div>
 					</div>
 				</div>
