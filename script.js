@@ -125,7 +125,7 @@ function createTodoHtmlElement(data) {
 						<div class="task-date">
 							<p>${data.date}</p>
 						</div>
-							<p>${returnStatus(data.status)}</p>
+							<p>${returnStatusBasedOnState(data.status)}</p>
 						<div class="task-date">
 								<a href="#" class="edit-task">Edit</a>
 								<a href="#" class="delete-task">Delete</a>
@@ -134,7 +134,7 @@ function createTodoHtmlElement(data) {
 	return newTask;
 }
 
-function returnStatus(status) {
+function returnStatusBasedOnState(status) {
 	return status == 'true' ? 'Completed' : 'Active';
 }
 
