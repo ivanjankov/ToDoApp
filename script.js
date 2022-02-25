@@ -14,6 +14,7 @@ let currentIdForEdit = 0;
 let addTaskBtnController = document.getElementById('add-task-upper');
 let addTaskInputController = document.getElementById('add-task-input');
 let editInputWrapper = document.getElementById('edit-wrapper');
+let closeEdit = document.getElementById('close-edit');
 
 // apeend new task in taskwrapper element
 let toDoTasks = [];
@@ -212,6 +213,7 @@ function sortByStatus(obj) {
 
 // toggle task input on click
 addTaskBtnController.addEventListener('click', toggleAddTaskInputVisibility);
+closeEdit.addEventListener('click', toggleEditInputVisibility);
 
 function toggleAddTaskInputVisibility() {
 	addTaskInputController.classList.toggle('hidden');
